@@ -111,3 +111,15 @@ exports.findRecom = (callback) => {
 
     })
 }
+
+// 查询 某一商品
+exports.findOne = (id, callback) => {
+    Good.find(id, (err, ret) => {
+        if (err) {
+            callback(err)
+        } else {
+            callback(null, ret)
+        }
+
+    })
+}

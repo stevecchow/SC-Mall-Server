@@ -11,7 +11,7 @@ var apiRouter = require('./routes/api');
 var app = express();
 
 // 开放跨域请求
-app.all(['/api/types','/api/getTypeAll/:id','/api/getRecom'], function (req, res, next) {
+app.all(['/api/types','/api/getTypeAll/:id','/api/getRecom','/api/getWipe/:id','/api/good/:id','/api/allGoods'], function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");

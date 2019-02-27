@@ -100,4 +100,44 @@ router.get('/getRecom', (req, res, next) => {
     })
 })
 
+// 获取相应wipe
+router.get('/getWipe/:type_id', (req, res, next) => {
+    var result = {
+        status: 0,
+        message: []
+    }
+    goodsDao.findOneType(req.params, (err, ret) => {
+        if (err) {
+            res.send(err)
+        } else {
+            result.status = 1
+            ret.sort((a, b) => {
+                return (b.click - a.click)
+            })
+            for (var i = 0; i < 4; i++) {
+                result.message.push(ret[i])
+            }
+            res.send(result)
+        }
+    })
+})
+
+// 获取某一商品信息
+router.get('/good/:_id', (req, res, next) => {
+    var result = {
+        status: 0,
+        message: []
+    }
+    goodsDao.findOne(req.params, (err, ret) => {
+        console.log(req.params)
+        if (err) {
+            res.send(err)
+        } else {
+            result.status = 1
+            result.message.push(ret[0])
+            res.send(result)
+        }
+    })
+})
+
 module.exports = router;
