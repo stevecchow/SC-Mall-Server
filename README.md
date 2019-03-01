@@ -28,10 +28,6 @@
 
 ## API
 
-```shell
-['/api/types','/api/getTypeAll/:id','/api/getRecom','/api/getWipe/:id','/api/good/:id','/api/allGoods']
-```
-
 ### 1 解释
 
 - status：
