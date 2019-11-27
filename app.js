@@ -37,7 +37,7 @@ app.use('/users', usersRouter);
 // 把路由容器挂载到 app 服务中
 app.use('/api', apiRouter);
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('running 3000...')
 })
 
